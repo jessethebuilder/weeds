@@ -1,0 +1,21 @@
+<div id="sections" class="container">
+  <ul class="nav nav-pills">
+    <% @sections.each do |s| %>
+      <li>
+        <%= link_to s.name, "#section_#{s.id}", 'data-toggle' => 'tab' %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="tab-content">
+    <% @sections.each do |s| %>
+      <div class="tab-pane fade" id="<%= "section_#{s.id}" %>">
+        <%= render :partial => 'items/list', :locals => {:section => s} %>
+      </div>
+    <% end %>
+  </div><!--tab content-->
+</div>
+
+<script>
+  activateFirstTab();
+</script>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Per gram:</strong>
+  <%= @pricing.per_gram %>
+</p>
+
+<p>
+  <strong>Per eighth:</strong>
+  <%= @pricing.per_eighth %>
+</p>
+
+<p>
+  <strong>Per quarter:</strong>
+  <%= @pricing.per_quarter %>
+</p>
+
+<p>
+  <strong>Per half:</strong>
+  <%= @pricing.per_half %>
+</p>
+
+<p>
+  <strong>Per ounce:</strong>
+  <%= @pricing.per_ounce %>
+</p>
+
+<p>
+  <strong>Per item:</strong>
+  <%= @pricing.per_item %>
+</p>
+
+<%= link_to 'Edit', edit_pricing_path(@pricing) %> |
+<%= link_to 'Back', pricings_path %>

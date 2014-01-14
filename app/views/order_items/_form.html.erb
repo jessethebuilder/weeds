@@ -1,0 +1,25 @@
+<%= form_for(order_item) do |f| %>
+  <% if order_item.pricing_scheme == 'weight' %>
+    <div class="form-inline">
+      <div class="btn-group" data-toggle="buttons">
+        <% order_item.pricing.to_hash.each do |k, v| %>
+          <label class="btn btn-default">
+            <%= f.radio_button :quantity, k %>
+            <%= Pricing::WEIGHTS[k][:display] %><br>
+            <small>
+              <%= number_to_currency v %>
+            </small>
+          </label>
+        <% end %>
+      </div><!--btn-group-->
+
+      <%= link_to "<span class='glyphicon glyphicon-shopping-cart'></span> Add to cart".html_safe, '#',
+                   :class => "form_submitter btn btn-primary btn-lg" %>
+      <%#= f.submit 'Add to Cart', :class => 'btn btn-primary btn-lg' %>
+    </div><!--form inline-->
+  <% end #per_weight %>
+<% end %>
+
+<script>
+
+</script>

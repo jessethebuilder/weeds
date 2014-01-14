@@ -1,0 +1,14 @@
+<% section.items.each do |i| %>
+  <div class="col-md-6">
+    <div class="item">
+      <h3>
+        <%= link_to i.name, section_item_path(section, i) %>
+        <small>
+          <%= i.description %>
+        </small>
+      </h3>
+
+      <%= render :partial => 'order_items/form', :locals => {:order_item => OrderItem.new(:item_id => i.id)} %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>
+    <%= @item.name %>
+    <small>
+      <%= @item.description %>
+    </small>
+  </h1>
+  <%= render :partial => 'order_items/form', :locals => {:order_item => OrderItem.new(:item_id => @item.id)}%>
+</div>

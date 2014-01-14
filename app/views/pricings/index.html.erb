@@ -1,0 +1,37 @@
+<h1>Listing pricings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Per gram</th>
+      <th>Per eighth</th>
+      <th>Per quarter</th>
+      <th>Per half</th>
+      <th>Per ounce</th>
+      <th>Per item</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pricings.each do |pricing| %>
+      <tr>
+        <td><%= pricing.per_gram %></td>
+        <td><%= pricing.per_eighth %></td>
+        <td><%= pricing.per_quarter %></td>
+        <td><%= pricing.per_half %></td>
+        <td><%= pricing.per_ounce %></td>
+        <td><%= pricing.per_item %></td>
+        <td><%= link_to 'Show', pricing %></td>
+        <td><%= link_to 'Edit', edit_pricing_path(pricing) %></td>
+        <td><%= link_to 'Destroy', pricing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pricing', new_pricing_path %>
