@@ -1,4 +1,4 @@
-u = User.new :email => 'test@test.com', :password => 'test88'
+u = User.new :email => 'test@test.com', :password => 'test8888'
 u.save!
 
 SectionsHelper::SECTIONS.each do |k, v|
