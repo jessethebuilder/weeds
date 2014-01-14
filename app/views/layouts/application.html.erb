@@ -5,8 +5,12 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+  <%= favicon_link_tag 'Oregon Weed Dark-20140114-favicon.ico.png' %>
+  <!--<link rel="shortcut icon" href="../assets/images/Oregon Weed-dark-favicon.ico.png">-->
 </head>
 <body>
+
 <%= render :partial => 'parts/top_nav' %>
 <%= render :partial => 'parts/flash' %>
 <%= render :partial => 'parts/banner' %>
