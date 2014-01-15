@@ -46,7 +46,7 @@ body{
   //  margin: 10px;
   padding: 10px;
   margin-bottom: 10px;
-//  height: 400px;
+  height: 400px;
 }
 .inner_carousel_item{
   text-align: center;
@@ -54,6 +54,8 @@ body{
 
   img{
     margin: 0 auto;
+    vertical-align: middle;
+    height: 375px;
   }
  }
 
