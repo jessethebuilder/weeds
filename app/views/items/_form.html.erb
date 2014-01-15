@@ -1,33 +1,28 @@
 <%= form_for(@item) do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+  <%= render :partial => 'parts/error_explanation', :locals => {:object => @item} %>
 
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <%= f.text_field :name, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :section_id, :class => 'control-label' %>
+    <%= f.select :section_id, options_for_select(Section.all.each.collect{ |s| [s.name, s.id] }), {}, {:class => 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <%= f.text_area :description, :class => 'form-control' %>
+  </div>
+
+  <%= f.fields_for :image do |image_fields| %>
+    <%= render :partial => 'images/embedded_form', :locals => {:f => image_fields} %>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :section_id %><br>
-    <%= f.number_field :section_id %>
-  </div>
-  <div class="field">
-    <%= f.label :pricing_id %><br>
+    <div class="form-group">
+    <%= f.label :pricing_id, :class => 'control-label' %>
     <%= f.text_field :pricing_id %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>

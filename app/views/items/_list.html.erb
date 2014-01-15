@@ -1,8 +1,8 @@
 <% section.items.each do |i| %>
   <div class="col-md-6">
-    <div class="item">
+    <div class="store_item">
       <h3>
-        <%= link_to i.name, section_item_path(section, i) %>
+        <%= link_to i.name, item_path(i) %>
         <small>
           <%= i.description %>
         </small>

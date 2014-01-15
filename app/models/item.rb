@@ -8,4 +8,6 @@ class Item < ActiveRecord::Base
   validates :name, :presence => true
 
   has_many :order_items
+
+  has_many :images, :as => :has_images
 end

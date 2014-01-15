@@ -5,5 +5,38 @@
       <%= @item.description %>
     </small>
   </h1>
-  <%= render :partial => 'order_items/form', :locals => {:order_item => OrderItem.new(:item_id => @item.id)}%>
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= render :partial => 'order_items/form', :locals => {:order_item => OrderItem.new(:item_id => @item.id)}%>
+    </div><!--col-->
+
+    <div class="col-md-6">
+      <%= image_carousel(@item) %>
+
+      <%# @item.images.each do |img| %>
+          <%#= image_tag img.image_url(:carousel) %>
+      <%# end %>
+    </div><!--col-->
+  </div><!--row-->
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="fb-comments" data-href="<%= item_url(@item) %>" data-numposts="10" width="700" data-colorscheme="light"></div>
+
+      <div id="fb-root"></div>
+
+      <script>
+          (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=<%= ApplicationHelper::FACEBOOK_ID %>";
+              fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+      </script>
+    </div><!--col-->
+  </div><!--row-->
+
 </div>

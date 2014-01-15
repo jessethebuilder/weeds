@@ -14,5 +14,7 @@ Weeds::Application.routes.draw do
     resources :items
   end
 
+  resources :items
+
   root 'sections#index'
 end

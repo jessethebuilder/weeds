@@ -21,7 +21,7 @@ a[data-toggle=tab]{
   font-family: $menu_font;
 }
 
-.item{
+.store_item{
   border: 3px solid $oregon_color;
   border-radius: 20px;
   -moz-border-radius: 20px;
@@ -33,6 +33,29 @@ a[data-toggle=tab]{
 .tab-content{
   margin-top: 15px;
 }
+
+body{
+  padding-bottom: 50px;
+}
+
+//carousel----------------------------------
+.carousel{
+  border: 5px solid $oregon_color;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  //  margin: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+//  height: 400px;
+}
+.inner_carousel_item{
+  text-align: center;
+//  vertical-align: middle;
+
+  img{
+    margin: 0 auto;
+  }
+ }
 
 //forms
 $input-border-focus: $leaf_color;

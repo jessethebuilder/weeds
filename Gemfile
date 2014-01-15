@@ -40,7 +40,12 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise'
 #gem 'geocoder'
 
-gem "paperclip", "~> 3.0"
+#gem "paperclip", "~> 3.0"
+gem 'carrierwave'
+gem 'mini_magick'
+#gem 'rmagick'
+#gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+
 
 group :test, :development do
   gem 'faker'
