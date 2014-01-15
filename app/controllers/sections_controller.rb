@@ -4,6 +4,7 @@ class SectionsController < ApplicationController
   # GET /sections
   # GET /sections.json
   def index
+    flash.notice = 'This is a demo, and not a live application.'
     @sections = Section.all
   end
 
