@@ -38,6 +38,16 @@ body{
   padding-bottom: 50px;
 }
 
+#disclaimer{
+  border: 5px solid $oregon_color;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  //  margin: 10px;
+  padding: 10px;
+  color: yellow;
+  background-color: black;
+}
+
 //carousel----------------------------------
 .carousel{
   border: 5px solid $oregon_color;

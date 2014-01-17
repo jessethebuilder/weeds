@@ -10,7 +10,6 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-        flash.notice = 'This is a demo, and not a live application.'
   end
 
   # GET /items/new
