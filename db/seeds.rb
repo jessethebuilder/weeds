@@ -1,6 +1,9 @@
 u = User.new :email => 'test@test.com', :password => 'test8888'
 u.save!
 
+a = User.new :email => 'admin@test.com', :password => 'test8888', :admin => true
+a.save!
+
 SectionsHelper::SECTIONS.each do |k, v|
   s = Section.new(:name => v[:name],
                  :description => v[:description],

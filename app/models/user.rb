@@ -5,8 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :orders
-
-  def current_order
-    orders.open.last || orders.new
-  end
 end

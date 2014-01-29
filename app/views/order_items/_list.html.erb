@@ -1,0 +1,40 @@
+<table id="order_items_list" class="table table-striped">
+  <% order.order_items.each do |oi| %>
+    <tr>
+      <td>
+        <%= oi.item.name %>
+      </td>
+
+      <td>
+        <%= oi.quantity.titlecase %>
+      </td>
+
+      <td>
+        <strong>
+          <%= number_to_currency(oi.item_total) %>
+        </strong>
+      </td>
+
+      <td>
+        <%= link_to '(remove)', order_item_path(oi), :method => :delete, :class => 'text-danger' %>
+      </td>
+    </tr>
+  <% end %>
+
+  <tr>
+    <td>
+      <h3>
+        Total:
+      </h3>
+    </td>
+    <td></td>
+    <td>
+      <h3>
+        <%= number_to_currency(order.items_total) %>
+      </h3>
+    </td>
+    <td>
+
+    </td>
+  </tr>
+</table>

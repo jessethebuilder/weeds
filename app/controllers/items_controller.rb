@@ -1,5 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :create_special]
+  before_filter :authenticate_user!, :only => [:edit, :update, :new, :create, :destroy, :create_special]
+
+  def create_special
+
+  end
 
   # GET /items
   # GET /items.json

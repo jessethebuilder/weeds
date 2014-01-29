@@ -9,7 +9,6 @@ describe Order do
   end
 
   describe 'Validations' do
-    it{ should validate_presence_of :user }
     it{ should validate_presence_of :status }
     it{ should ensure_inclusion_of(:status).in_array(Order::STATUSES) }
   end
@@ -33,5 +32,30 @@ describe Order do
         Order.open.should_not include(complete_order)
       end
     end
-  end
+
+    describe '#current' do
+      it 'returns the last order for which #status is "ordering"' do
+        order.status = 'ordering'
+        order.save!
+        o2 = Order.create(:status => 'ordering')
+        Order.current.first.should == o2
+      end
+    end
+  end #Scopes
+
+  describe 'Methods' do
+    #todo describe '#items_total' do
+    #  it 'should return the total of all OrderItems' do
+    #    order.save!
+    #    oi = create :order_item
+    #    oi2 = create :order_item
+    #    oi.item.pricing.
+    #    order.order_items << [oi, oi2]
+    #    @o = oi
+    #    puts oi.item_total
+    #    puts '---------------------------------------------------------------------------d'
+    #    order.items_total.should == oi.item_total + oi2.item_total
+    #  end
+    #end
+  end #Methods
 end

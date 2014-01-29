@@ -18,6 +18,8 @@ class OrderItem < ActiveRecord::Base
   def item_total
     if pricing_scheme == 'weight'
       per_weight_item_total
+    else
+      raise NotImplementedError, "IMPLEMENT ME!"
     end
   end
 

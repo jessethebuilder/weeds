@@ -1,6 +1,6 @@
 <% section.items.each do |i| %>
   <div class="col-md-6">
-    <div class="store_item">
+    <div class="item" id="item_<%= i.id %>">
       <h3>
         <%= link_to i.name, item_path(i) %>
         <small>
@@ -8,7 +8,8 @@
         </small>
       </h3>
 
-      <%= render :partial => 'order_items/form', :locals => {:order_item => OrderItem.new(:item_id => i.id)} %>
+      <%#= render :partial => 'order_items/form', :locals => {:order_item => OrderItem.new} %>
+      <%= render :partial => 'order_items/form', :locals => {:item => i} %>
     </div>
   </div>
 <% end %>

@@ -1,0 +1,6 @@
+<li id="current_order">
+  <% unless current_order.new_record? %>
+      <%= link_to "<span class='glyphicon glyphicon-shopping-cart'></span> Shopping Cart".html_safe,
+                   edit_order_path(current_order), :class => 'btn btn-default' %>
+  <% end %>
+</li>

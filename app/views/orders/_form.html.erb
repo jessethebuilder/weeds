@@ -1,21 +1,9 @@
 <%= form_for(@order) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+  <%= render :partial => 'parts/error_explanation', :locals => {:object => @order} %>
 
-      <ul>
-      <% @order.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render :partial => 'order_items/list', :locals => {:order => current_order} %>
 
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row text-center">
+    <%= image_tag 'express-checkout-hero.png', :style => 'width: 230px;' %>
   </div>
 <% end %>

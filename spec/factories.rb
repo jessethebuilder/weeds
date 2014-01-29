@@ -12,24 +12,36 @@ FactoryGirl.define do
     name
     section
     pricing
+
+    factory :item_priced_per_weight do
+      pricing :pricing_per_weight
+    end
   end
 
   factory :pricing do
     scheme Pricing::SCHEMES.sample
+
+    factory :pricing_per_weight do
+      scheme 'weight'
+    end
   end
 
 
   factory :user do
     email
-    password 'testtest'
+    password 'test8888'
   end
 
   factory :order do
-    user
   end
 
   factory :order_item do
+    quantity Pricing::WEIGHTS.keys.sample
     order
     item
+
+    factory :order_item_priced_per_weight do
+      item :item_priced_per_weight
+    end
   end
 end

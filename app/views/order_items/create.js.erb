@@ -1,0 +1,8 @@
+<% if @show_current_order %>
+  $('#current_order').replaceWith("<%= j render :partial => 'orders/current_order' %>");
+  $('#quantity_for_item_<%= @order_item.item_id %> label').removeClass('active');
+<% end %>
+
+<% if @bad_order_item %>
+  $("#quantity_for_item_<%= @bad_order_item.item_id %>").addClass('has-error').append("<%= j render :partial => 'order_items/reminder_to_select_quantity' %>");
+<% end %>

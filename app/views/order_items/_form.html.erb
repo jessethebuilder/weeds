@@ -1,10 +1,13 @@
-<%= form_for(order_item) do |f| %>
-  <% if order_item.pricing_scheme == 'weight' %>
+<%= form_for OrderItem.new, :remote => true, :html => {:id => "new_order_item_for_item_#{item.id}"} do |f| %>
+
+  <%= f.hidden_field :item_id, :value => item.id, :id => "order_item_item_#{item.id}" %>
+
+  <% if item.section.items_pricing_scheme == 'weight' %>
     <div class="form-inline">
-      <div class="btn-group" data-toggle="buttons">
-        <% order_item.pricing.to_hash.each do |k, v| %>
-          <label class="btn btn-default">
-            <%= f.radio_button :quantity, k %>
+      <div class="btn-group" data-toggle="buttons" id="<%= "quantity_for_item_#{item.id}" %>">
+        <% item.pricing.to_hash.each do |k, v| %>
+          <label class="btn btn-default control-label">
+            <%= f.radio_button :quantity, k, :id => "order_item_quantity_#{k.to_s}_for_item_#{item.id}" %>
             <%= Pricing::WEIGHTS[k][:display] %><br>
             <small>
               <%= number_to_currency v %>
@@ -13,10 +16,25 @@
         <% end %>
       </div><!--btn-group-->
 
-
-      <%= link_to "<span class='glyphicon glyphicon-shopping-cart'></span> Add to cart".html_safe, '#',
-                  :class => "form_submitter btn btn-primary btn-lg" %>
-      <%#= f.submit 'Add to Cart', :class => 'btn btn-primary btn-lg' %>
+      <%= button_tag :type => 'submit', :class => "form_submitter btn btn-primary btn-lg" do %>
+        <span class='glyphicon glyphicon-shopping-cart'></span> Add to cart
+      <% end %>
     </div><!--form inline-->
   <% end #per_weight %>
+
+  <% if admin? %>
+    <div class="row text-center">
+      <div class="form-inline">
+        <%= link_to 'Create Special', create_special_item_path(item), :class => 'btn btn-default' %>
+        <%= link_to 'Edit', edit_item_path(item), :class => 'btn btn-info' %>
+      </div>
+    </div>
+  <% end #admin features %>
 <% end %>
+
+<script>
+  $('.btn-group').on('change', function(){
+    $(this).find('.reminder_to_select_quantity').detach();
+    $(this).removeClass('has-error');
+  })
+</script>

@@ -1,13 +1,23 @@
 $leaf_color: #6be86b;
 $oregon_color: #9aad9a;
 $dark_accent: #4a4a4a;
+$light_accent: #f0f0f0;
 
 $menu_font: Impact, Charcoal, sans-serif;
 
 $nav-pills-active-link-hover-bg: $leaf_color;
 
 //top_nav
-$navbar-default-bg: rgba(28, 173, 0, 0.50);
+$navbar-default-bg: rgba($leaf_color, .9);
+//$navbar-default-color: black;
+$navbar-default-brand-color: $dark_accent;
+$navbar-default-link-color: $dark_accent;
+$navbar-default-brand-hover-color: $light_accent;
+$navbar-default-link-hover-color: $light_accent;
+$navbar-default-toggle-border-color: black;
+$navbar-default-toggle-icon-bar-bg: black;
+$navbar-default-toggle-hover-bg: white;
+
 .navbar-brand{
   font-family: $menu_font;
 }
@@ -21,7 +31,7 @@ a[data-toggle=tab]{
   font-family: $menu_font;
 }
 
-.store_item{
+.item{
   border: 3px solid $oregon_color;
   border-radius: 20px;
   -moz-border-radius: 20px;
@@ -46,6 +56,7 @@ body{
   padding: 10px;
   color: yellow;
   background-color: black;
+  margin-top: 10px;
 }
 
 //carousel----------------------------------
@@ -61,13 +72,8 @@ body{
 .inner_carousel_item{
   text-align: center;
 //  vertical-align: middle;
-
-  img{
-    margin: 0 auto;
-    vertical-align: middle;
-    height: 375px;
-  }
  }
+//end carousel-------------------------------
 
 //forms
 $input-border-focus: $leaf_color;
@@ -98,15 +104,6 @@ $input-border-focus: $leaf_color;
 
 
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
  *= require_self
  *= require_tree .
  */

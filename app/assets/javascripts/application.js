@@ -23,5 +23,5 @@ function activateFirstTab(){
 }
 
 $(document).on('click', '.form_submitter', function(){
-    $(this).closest('form').submit();
+    $(this).parent('form').submit();
 })

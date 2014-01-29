@@ -1,6 +1,6 @@
 class OrderItemsController < ApplicationController
+  include ApplicationHelper
   before_action :set_order_item, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!
 
   # GET /order_items
   # GET /order_items.json
@@ -27,13 +27,19 @@ class OrderItemsController < ApplicationController
   def create
     @order_item = OrderItem.new(order_item_params)
 
+    if current_order.new_record?
+      o = current_order
+      o.save
+      session[:current_order_id] = o.id
+    end
+
     respond_to do |format|
-      if @order_item.save
-        format.html { redirect_to @order_item, notice: 'Order item was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @order_item }
+      if current_order.order_items << @order_item
+        @show_current_order = true
+        format.js
       else
-        format.html { render action: 'new' }
-        format.json { render json: @order_item.errors, status: :unprocessable_entity }
+        @bad_order_item = @order_item
+        format.js
       end
     end
   end
@@ -57,8 +63,7 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item.destroy
     respond_to do |format|
-      format.html { redirect_to order_items_url }
-      format.json { head :no_content }
+      format.html { redirect_to :back }
     end
   end
 
@@ -72,4 +77,5 @@ class OrderItemsController < ApplicationController
     def order_item_params
       params.require(:order_item).permit(:order_id, :item_id, :cost, :quantity, :notes)
     end
+
 end

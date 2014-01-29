@@ -15,7 +15,6 @@ require 'capybara/rspec'
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include ActionView::Helpers::NumberHelper
-  config.include Devise::TestHelpers, :type => :controller
 
   config.infer_base_class_for_anonymous_controllers = false
 
@@ -38,6 +37,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  require 'support/request_helper'
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
   config.include RequestHelper
 end

@@ -6,6 +6,8 @@ Weeds::Application.routes.draw do
 
   resources :order_items
 
+  resources :images, :only => [:destroy, :new, :create]
+
 
   devise_for :users
  # resources :pricings
@@ -14,7 +16,11 @@ Weeds::Application.routes.draw do
     resources :items
   end
 
-  resources :items
+  resources :items do
+    member do
+     get 'create_special'
+    end
+  end
 
   root 'sections#index'
 end

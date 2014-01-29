@@ -1,0 +1,10 @@
+<div id="images_list">
+  <%= render :partial => 'images/form', :locals => {:object => object, :image => Image.new} %>
+
+  <% object.images.each do |i| %>
+    <div class="row" style="margin-bottom: 10px;">
+      <%= image_tag i.image_url(:thumb) %>
+      <%= link_to '(remove)', image_path(i), :method => :delete, :remote => true %>
+    </div>
+  <% end %>
+</div>
