@@ -1,5 +1,13 @@
-$leaf_color: #6be86b;
-$oregon_color: #9aad9a;
+/*
+ *= require_self
+ *= require_tree .
+ */
+
+
+$leaf_color: #7c0915;
+
+
+$oregon_color: #000000;
 $dark_accent: #4a4a4a;
 $light_accent: #f0f0f0;
 
@@ -8,7 +16,7 @@ $menu_font: Impact, Charcoal, sans-serif;
 $nav-pills-active-link-hover-bg: $leaf_color;
 
 //top_nav
-$navbar-default-bg: rgba($leaf_color, .9);
+$navbar-default-bg: rgba(255, 255, 255, 0.41);
 //$navbar-default-color: black;
 $navbar-default-brand-color: $dark_accent;
 $navbar-default-link-color: $dark_accent;
@@ -31,13 +39,17 @@ a[data-toggle=tab]{
   font-family: $menu_font;
 }
 
-.item{
-  border: 3px solid $oregon_color;
-  border-radius: 20px;
-  -moz-border-radius: 20px;
+.menu_item{
+  border-top: 3px solid $dark_accent;
+//  border-bottom: 3px solid $oregon_color;
+
+//  border-radius: 20px;
+//  -moz-border-radius: 20px;
 //  margin: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
+//  padding: 10px;
+//  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .tab-content{
@@ -48,31 +60,8 @@ body{
   padding-bottom: 50px;
 }
 
-#disclaimer{
-  border: 5px solid $oregon_color;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  //  margin: 10px;
-  padding: 10px;
-  color: yellow;
-  background-color: black;
-  margin-top: 10px;
-}
-
 //carousel----------------------------------
-.carousel{
-  border: 5px solid $oregon_color;
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  //  margin: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-  height: 400px;
-}
-.inner_carousel_item{
-  text-align: center;
-//  vertical-align: middle;
- }
+
 //end carousel-------------------------------
 
 //forms
@@ -92,18 +81,27 @@ $input-border-focus: $leaf_color;
   margin-bottom: 10px;
   margin-right: 30px;
 }
-//
-//.form_submitter{
-//  font-family: $menu_font;
-//}
+
+//---------------Carousel--------------------------
+$carousel-control-font-size: 40px;
+
+//$carousel-
+.carousel{
+//  border: 5px solid $oregon_color;
+//  padding: 40px;
+//  background-color: rgba($leaf_color, .25);
+  .item{
+
+  }
+  .inner_carousel_item{
+    text-align: center;
+    //  vertical-align: middle;
+  }
+
+}
 
 
 
 //-------------------------------IMPORT BOOTSTRAP-----------------------------
 @import "bootstrap";
 
-
-/*
- *= require_self
- *= require_tree .
- */

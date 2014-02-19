@@ -21,15 +21,17 @@ ItemsHelper::ITEMS.each do |i|
   pricing = Pricing.new(:scheme => item.section.items_pricing_scheme, :per_gram => 10.0, :per_quarter => 50,
                         :per_half => 100, :per_ounce => 200, :per_eighth => 30)
 
-  3.times do |n|
-    i = Image.create(:description => 'A description goes here.')
-    i.image.store!(File.open(File.join(Rails.root, 'app', 'assets', 'images', 'test', "pot#{n}.jpg")))
-    item.images << i
-  end
+
 
   item.pricing = pricing
   item.section = flowers
   item.save!
+
+  (0..3).each do |n|
+    i = Image.create(:description => 'A description goes here.')
+    i.image.store!(File.open(File.join(Rails.root, 'app', 'assets', 'images', 'test', "pot#{n}.jpg")))
+    item.images << i
+  end
 
   item2 = item.dup
   item2.pricing = pricing.dup

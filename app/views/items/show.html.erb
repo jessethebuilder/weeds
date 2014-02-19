@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>
+  <h1 class="highlight">
     <%= @item.name %>
     <small>
       <%= @item.description %>
@@ -8,12 +8,12 @@
 
   <div class="row">
     <div class="col-md-6">
-      <%= render :partial => 'order_items/form', :locals => {:order_item => OrderItem.new(:item_id => @item.id)}%>
+      <%= render :partial => 'order_items/form', :locals => {:item => @item}%>
     </div><!--col-->
 
     <% unless @item.images.count == 0 %>
       <div class="col-md-6">
-        <%= express_carousel(@item) %>
+        <%= express_carousel(@item, :use_indicators => false) %>
       </div><!--col-->
     <% end %>
 

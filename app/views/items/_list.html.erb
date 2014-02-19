@@ -1,15 +1,22 @@
-<% section.items.each do |i| %>
-  <div class="col-md-6">
-    <div class="item" id="item_<%= i.id %>">
-      <h3>
-        <%= link_to i.name, item_path(i) %>
-        <small>
-          <%= i.description %>
-        </small>
-      </h3>
+<% do_row = true %>
 
-      <%#= render :partial => 'order_items/form', :locals => {:order_item => OrderItem.new} %>
-      <%= render :partial => 'order_items/form', :locals => {:item => i} %>
-    </div>
-  </div>
+<% section.items.each do |i| %>
+    <%= '<div class="row">'.html_safe if do_row %>
+
+    <div class="col-md-6">
+      <div class="menu_item" id="item_<%= i.id %>">
+        <h3>
+          <%= link_to i.name, item_path(i) %>
+          <small>
+            <%= i.description %>
+          </small>
+        </h3>
+
+          <%= render :partial => 'order_items/form', :locals => {:item => i} %>
+
+
+      </div>
+    </div><!--col-->
+    <%= '</div><!--row-->'.html_safe if do_row == false || section.items.last == i %>
+    <% do_row = !do_row %>
 <% end %>
