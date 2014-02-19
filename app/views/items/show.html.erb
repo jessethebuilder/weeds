@@ -10,7 +10,11 @@
     <div class="col-md-6">
       <%= render :partial => 'order_items/form', :locals => {:item => @item}%>
 
-
+      <style>
+        .fb-like{
+            margin-top: 10px;
+        }
+      </style>
       <!--todo dehack these fb buttons-->
       <!--<div class="fb-like" data-href="http://weeds.herokuapp.com" data-width="100" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>-->
       <div class="fb-like" data-href="<%= request.url %>" data-width="100" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
