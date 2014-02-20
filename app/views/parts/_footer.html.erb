@@ -1,0 +1,56 @@
+<div id="footer_row" class="row">
+  <div class="container text-center">
+    <h1>Rose City Medical</h1>
+    <%= image_tag 'icons/facebook.png' %>
+    <%= image_tag 'icons/twitter.png' %>
+    <%= image_tag 'icons/rss.png' %>
+    <br>
+    <strong>
+      <%= link_to "503-788-1589", "tel:5037881589" %>
+    </strong>
+    <address>
+      113 N. North Street<br>
+      Portland, OR 97205
+    </address>
+
+    <h3>
+      Open 9am to 9pm Daily
+    </h3>
+
+    <hr>
+
+    <p>
+      This site was created by <%= link_to 'Anysoft', 'http://www.anysoft.herokuapps.com' %>.<br>
+      If you have any questions or concerns about the site, please feel free to
+      <%= mail_to 'jessethebuilder@yahoo.com', 'contact us' %> anytime.
+    </p>
+  </div>
+</div>
+
+<script>
+  var footer_height;
+
+  $(document).ready(function(){
+      footer_height = $('#footer_row').height();
+      $('#footer_row').css('display', 'none');
+      $('<div id="placeholder_row" class="row"></div>').insertAfter('#footer_row');
+      $('#placeholder_row').css('display', 'block');
+      $('#placeholder_row').css('height', footer_height);
+  })
+
+  window.onscroll = function(){
+    if($('#placeholder_row').css('display') == 'block'){
+      if($('#placeholder_row').offset().top < ($(window).scrollTop() + $(window).height() - 120)){
+        $('#placeholder_row').css('display', 'none');
+        $('#footer_row').fadeIn(1000, function(){
+        })
+      }
+    }else{
+      if($('#footer_row').offset().top > ($(window).scrollTop() + $(window).height() - 180)){
+        $('#footer_row').fadeOut(1000, function(){
+          $('#placeholder_row').css('display', 'block');
+        })
+      }
+    }
+  }
+</script>

@@ -15,8 +15,10 @@ $menu_font: Impact, Charcoal, sans-serif;
 
 $nav-pills-active-link-hover-bg: $leaf_color;
 
+$nav_color: rgba(255, 255, 255, 0.41);
+
 //top_nav
-$navbar-default-bg: rgba(255, 255, 255, 0.41);
+$navbar-default-bg: $nav_color;
 //$navbar-default-color: black;
 $navbar-default-brand-color: $dark_accent;
 $navbar-default-link-color: $dark_accent;
@@ -57,7 +59,6 @@ a[data-toggle=tab]{
 }
 
 body{
-  padding-bottom: 50px;
 }
 
 //carousel----------------------------------
@@ -98,6 +99,20 @@ $carousel-control-font-size: 40px;
     //  vertical-align: middle;
   }
 
+}
+
+//footer
+
+#footer_row{
+  background-color: darken($nav_color, 20);
+  border-top: 2px solid $dark_accent;
+  margin-top: 50px;
+  color: $dark_accent;
+  padding-bottom: 50px;
+
+  hr{
+    border-color: $dark_accent;
+  }
 }
 
 
