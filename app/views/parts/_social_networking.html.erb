@@ -1,7 +1,8 @@
 <div id='social_networking_row' class="row">
   <div class="container social_networking_container">
     <span class="social_networking_cell">
-      <%= follow_on_facebook_button FACEBOOK_RELATED, :include_script => true, :fb_id => FACEBOOK_ID %>
+      <%= like_on_facebook_button "http://www.facebook.com/#{FACEBOOK_RELATED}", :include_script => true,
+                                  :fb_id => FACEBOOK_ID, :share => false %>
       <%= follow_on_twitter_button TWITTER_RELATED, :include_script => true %>
     </span>
     <hr>

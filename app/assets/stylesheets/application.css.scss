@@ -119,31 +119,14 @@ $carousel-control-font-size: 40px;
   }
 }
 
-//twitter
-.twitter-share-button{
-  margin-top: 5px;
-}
 
-//facebook
-.fb-like{
-  margin-top: 5px;
-}
-.social_networking_cell{
-  display: inline;
-  margin-top: 5px;
-}
-.twitter-follow-button{
-  height: 35px;
-  display: inline;
-  vertical-align: top;
-}
 #fb-root{
   display: none;
 }
 .fb-like{
-  display: table-cell;
-  vertical-align: top;
+  vertical-align: top !important;
 }
+
 
 
 
