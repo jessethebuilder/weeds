@@ -32,7 +32,7 @@ module ItemsHelper
     html += content_tag(:meta, '', property: 'og:description', content: item.description)
     html += content_tag(:meta, '', property: 'og:type', content: 'product')
     html += content_tag(:meta, '', property: 'og:url', content: request.url)
-    html += content_tag(:meta, '', property: 'og:image', content: item.images.sample.full_url)
+    html += content_tag(:meta, '', property: 'og:image', content: item.images.sample.full_url(:facebook_meta))
     html
     #h.append('<meta property="og:title" content="' + title + '">');
     #h.append('<meta property="og:type" content="' + type + '">');
