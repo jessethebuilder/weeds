@@ -2,6 +2,8 @@ function userIsSignedIntoFb(){
 
 }
 
+//check
+
 function addOpenGraphTags(id, admins, title, description, type, image_url, url, site_name){
     var h = $('head');
     h.append('<meta property="fb:app_id" content="' + id + '"/>');
