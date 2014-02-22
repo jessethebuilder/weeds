@@ -28,7 +28,9 @@ module ItemsHelper
 
   def og_tags(item)
     html = standard_og_tags
-    html += content_tag(:meta, '', property: 'title', content: facebook_title(item))
+    html += content_tag(:meta, '', property: 'og:title', content: facebook_title(item))
+    html += content_tag(:meta, '', property: 'og:description', content: item.description)
+
     html
     #h.append('<meta property="og:title" content="' + title + '">');
     #h.append('<meta property="og:type" content="' + type + '">');
