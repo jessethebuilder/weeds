@@ -28,4 +28,6 @@ Weeds::Application.configure do
   config.assets.debug = true
 
   config.serve_static_assets = true
+
+  config.action_controller.asset_host = 'http://localhost:3000'
 end

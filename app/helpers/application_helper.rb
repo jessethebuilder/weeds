@@ -27,6 +27,7 @@ module ApplicationHelper
   ::TWITTER_RELATED = 'anysoftdotnet'
 
   ::STORE_NAME = 'Rose City Medical'
+  ::ASSET_HOST = 'http://weeds.herokuapp.com'
 
 
   def facebook_href
