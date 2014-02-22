@@ -78,5 +78,5 @@ Weeds::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_controller.asset_host = ASSET_HOST
+  config.action_controller.asset_host = ApplicationHelper::ASSET_HOST
 end
