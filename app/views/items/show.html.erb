@@ -1,5 +1,5 @@
 <%= content_for :title do %>
-  <%= "#{STORE_NAME} | #{@item.section.name} | #{@item.name}" %>
+  <%= facebook_title(@item) %>
 <% end %>
 
 <div class="container">
@@ -14,7 +14,9 @@
     <div class="col-md-6">
       <%= render :partial => 'order_items/form', :locals => {:item => @item}%>
 
-      <%= render :partial => 'parts/social_networking_specific' %>
+      <div id="social_networking">
+        <%= render :partial => 'parts/social_networking_specific' %>
+      </div>
 
     </div><!--col-->
 
@@ -26,6 +28,12 @@
 
   </div><!--row-->
 </div>
+
+<script>
+  addOpenGraphTags(<%= FACEBOOK_ID %>, [], '<%= facebook_title(@item) %>', '<%= @item.description %>',
+                   'product', '<%= @item.images.sample.image_url(:facebook_meta) %>', '<%= request.url %>', '<%= STORE_NAME %>')
+
+</script>
 
 
 

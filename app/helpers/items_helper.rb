@@ -21,4 +21,8 @@ module ItemsHelper
     #s += item.description
     s[0..139]
   end
+
+  def facebook_title(item)
+    "#{STORE_NAME} | #{item.section.name} | #{item.name}"
+  end
 end
