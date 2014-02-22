@@ -2,6 +2,10 @@
   <%= facebook_title(@item) %>
 <% end %>
 
+<%= content_for :head do %>
+  <%= og_tags(@item) %>
+<% end %>
+
 <div class="container">
   <h1 class="highlight">
     <%= @item.name %>

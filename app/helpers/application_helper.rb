@@ -35,4 +35,11 @@ module ApplicationHelper
   def facebook_href
     Rails.env.development? ? 'http://weeds.herokuapps.com' : request.url
   end
+
+  def standard_og_tags
+    html = content_tag(:meta, '', property: 'fb:app_id', content: FACEBOOK_ID)
+    html += content_tag(:meta, '', property: 'fb:admins', content: FACEBOOK_ADMINS.join(','))
+    html += content_tag(:meta, '', property: 'og:site_name', content: STORE_NAME)
+    html
+  end
 end

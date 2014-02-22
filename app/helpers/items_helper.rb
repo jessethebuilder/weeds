@@ -25,4 +25,18 @@ module ItemsHelper
   def facebook_title(item)
     "#{STORE_NAME} | #{item.section.name} | #{item.name}"
   end
+
+  def og_tags(item)
+    html = standard_og_tags
+    html += content_tag(:meta, '', property: 'title', content: facebook_title(item))
+    html
+    #h.append('<meta property="og:title" content="' + title + '">');
+    #h.append('<meta property="og:type" content="' + type + '">');
+    #h.append('<meta property="og:image" content="' + image_url + '">');
+    #h.append('<meta property="og:url" content="' + url + '">');
+    #h.append('<meta property="og:description" content="' + description + '">');
+    #h.append('<meta property="og:site_name" content="' + site_name + '">');
+  end
+
+
 end
