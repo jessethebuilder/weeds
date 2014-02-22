@@ -1,0 +1,6 @@
+<%= like_on_facebook_button(facebook_href, :include_script => true, :fb_id => FACEBOOK_ID) %>
+<%= tweet_button CGI.escape(default_tweet(@item)), STORE_NAME, :url => CGI.escape(request.url), :include_script => true%>
+<% unless local_assigns[:no_comments] %>
+  <hr>
+  <%= facebook_comments(request.url, :include_script => true, :fb_id => FACEBOOK_ID, :include_root => false) %>
+<% end %>

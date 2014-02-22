@@ -13,10 +13,8 @@
   <div class="row">
     <div class="col-md-6">
       <%= render :partial => 'order_items/form', :locals => {:item => @item}%>
-        <%= like_on_facebook_button(facebook_href, :include_script => true, :fb_id => FACEBOOK_ID) %>
-        <%= tweet_button CGI.escape(default_tweet(@item)), 'anysoftdotnet', :url => CGI.escape(request.url), :include_script => true%>
-        <hr>
-        <%= facebook_comments(request.url, :include_script => true, :fb_id => FACEBOOK_ID, :include_root => false) %>
+
+      <%= render :partial => 'parts/social_networking_specific' %>
 
     </div><!--col-->
 
@@ -28,4 +26,6 @@
 
   </div><!--row-->
 </div>
+
+
 
