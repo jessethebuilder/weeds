@@ -9,4 +9,16 @@ module ItemsHelper
             ["Dirt Weed", "Full of seeds and gives you a thobbing headache"],
             ["Some Weed", "It's dope!"]
         ]
+
+  def default_tweet(item)
+    s = ""
+    #s = item_url(@item)
+    s += " #"
+    s += STORE_NAME.gsub(' ', '')
+    s += " has #"
+    s += item.name.gsub(' ', '')
+    s += ": "
+    #s += item.description
+    s[0..139]
+  end
 end

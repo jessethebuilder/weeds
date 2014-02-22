@@ -1,3 +1,7 @@
+<%= content_for :title do %>
+  <%= "#{STORE_NAME} | #{@item.section.name} | #{@item.name}" %>
+<% end %>
+
 <div class="container">
   <h1 class="highlight">
     <%= @item.name %>
@@ -9,19 +13,10 @@
   <div class="row">
     <div class="col-md-6">
       <%= render :partial => 'order_items/form', :locals => {:item => @item}%>
-
-      <style>
-        .fb-like{
-            margin-top: 10px;
-        }
-      </style>
-      <!--todo dehack these fb buttons-->
-      <!--<div class="fb-like" data-href="http://weeds.herokuapp.com" data-width="100" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>-->
-      <div class="fb-like" data-href="<%= request.url %>" data-width="100" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-       <hr>
-      <div class="fb-comments" data-href="<%= request.url %>" data-width="475" data-numposts="10" data-colorscheme="light"></div>
-      <!--<div class="fb-comments" data-href="http://weeds.herokuapp.com" data-width="475" data-numposts="10" data-colorscheme="light"></div>-->
-
+        <%= like_on_facebook_button(facebook_href, :include_script => true, :fb_id => FACEBOOK_ID) %>
+        <%= tweet_button CGI.escape(default_tweet(@item)), 'anysoftdotnet', :url => CGI.escape(request.url), :include_script => true%>
+        <hr>
+        <%= facebook_comments(request.url, :include_script => true, :fb_id => FACEBOOK_ID, :include_root => false) %>
 
     </div><!--col-->
 
@@ -32,32 +27,5 @@
     <% end %>
 
   </div><!--row-->
-
-  <!--<div class="row">-->
-    <!--<div class="col-md-6">-->
-      <!--<%#= fb_social_plugin item_url(@item) %>-->
-    <!--</div>&lt;!&ndash;col&ndash;&gt;-->
-  <!--</div>&lt;!&ndash;row&ndash;&gt;-->
-
 </div>
 
-<div id="fb-root"></div>
-
-<script>(function(d, s, id) {
-//like
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=<%= FACEBOOK_ID %>";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!--social-->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=<%=FACEBOOK_ID %>";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>

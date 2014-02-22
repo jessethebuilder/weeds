@@ -4,7 +4,7 @@
  */
 
 
-$leaf_color: #7c0915;
+$leaf_color: #118200;
 
 
 $oregon_color: #000000;
@@ -13,7 +13,7 @@ $light_accent: #f0f0f0;
 
 $menu_font: Impact, Charcoal, sans-serif;
 
-$nav-pills-active-link-hover-bg: $leaf_color;
+
 
 $nav_color: rgba(255, 255, 255, 0.41);
 
@@ -27,6 +27,9 @@ $navbar-default-link-hover-color: $light_accent;
 $navbar-default-toggle-border-color: black;
 $navbar-default-toggle-icon-bar-bg: black;
 $navbar-default-toggle-hover-bg: white;
+$medium_accent: darken($nav_color, 20);
+
+$nav-pills-active-link-hover-bg: $leaf_color;
 
 .navbar-brand{
   font-family: $menu_font;
@@ -103,8 +106,9 @@ $carousel-control-font-size: 40px;
 
 //footer
 
+
 #footer_row{
-  background-color: darken($nav_color, 20);
+  background-color: $medium_accent;
   border-top: 2px solid $dark_accent;
   margin-top: 50px;
   color: $dark_accent;
@@ -114,6 +118,34 @@ $carousel-control-font-size: 40px;
     border-color: $dark_accent;
   }
 }
+
+//twitter
+.twitter-share-button{
+  margin-top: 5px;
+}
+
+//facebook
+.fb-like{
+  margin-top: 5px;
+}
+.social_networking_cell{
+  display: inline;
+  margin-top: 5px;
+}
+.twitter-follow-button{
+  height: 35px;
+  display: inline;
+  vertical-align: top;
+}
+#fb-root{
+  display: none;
+}
+.fb-like{
+  display: table-cell;
+  vertical-align: top;
+}
+
+
 
 
 

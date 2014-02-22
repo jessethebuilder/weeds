@@ -10,4 +10,6 @@ class Item < ActiveRecord::Base
   has_many :order_items
 
   has_many :images, :as => :has_images
+
+
 end
