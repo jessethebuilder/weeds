@@ -31,7 +31,8 @@
 
 <script>
   addOpenGraphTags(<%= FACEBOOK_ID %>, [], '<%= facebook_title(@item) %>', '<%= @item.description %>',
-                   'product', '<%= @item.images.sample.image_url(:facebook_meta) %>', '<%= request.url %>', '<%= STORE_NAME %>')
+                   'product', '<%= @item.images.sample.full_url %>',
+                   '<%= request.url %>', '<%= STORE_NAME %>')
 
 </script>
 

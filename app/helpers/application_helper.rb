@@ -29,7 +29,7 @@ module ApplicationHelper
   ::STORE_NAME = 'Rose City Medical'
 
   #remember to change asset_host in environments/production if anyone ever has a fackin host.
-  ::ASSET_HOST = 'http://weeds.herokuapp.com'
+  ::ASSET_HOST = Rails.env.production? ? 'http://weeds.herokuapp.com' : 'http://localhost:3000'
 
 
   def facebook_href
