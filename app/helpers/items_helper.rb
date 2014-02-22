@@ -23,7 +23,7 @@ module ItemsHelper
   end
 
   def facebook_title(item)
-    "#{STORE_NAME} | #{item.section.name} | #{item.name}"
+    "#{STORE_NAME} | #{item.name}"
   end
 
   def og_tags(item)
