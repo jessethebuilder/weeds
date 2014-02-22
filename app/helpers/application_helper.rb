@@ -27,6 +27,8 @@ module ApplicationHelper
   ::TWITTER_RELATED = 'anysoftdotnet'
 
   ::STORE_NAME = 'Rose City Medical'
+
+  #remember to change asset_host in environments/production if anyone ever has a fackin host.
   ::ASSET_HOST = 'http://weeds.herokuapp.com'
 
 
