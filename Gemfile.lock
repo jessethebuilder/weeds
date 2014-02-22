@@ -5,8 +5,9 @@ GIT
     twitter_express (0.0.1)
       rails (~> 4.0.2)
 
-PATH
-  remote: C:/Users/jf/Desktop/jesseweb/farm_tools
+GIT
+  remote: https://github.com/jessethebuilder/farm_tools
+  revision: dba39667bd73469e51320d4d0a7acd40cbf425aa
   specs:
     farm_tools (0.0.1)
       rails
@@ -122,11 +123,17 @@ GEM
     mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.4)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
     pg (0.17.1-x86-mingw32)
     polyglot (0.3.3)
+    pry (0.9.12.4)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     pry (0.9.12.4-x86-mingw32)
       coderay (~> 1.0)
       method_source (~> 0.8)
