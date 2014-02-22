@@ -2,7 +2,7 @@ function userIsSignedIntoFb(){
 
 }
 
-//check
+//checkf
 
 function addOpenGraphTags(id, admins, title, description, type, image_url, url, site_name){
     var h = $('head');
