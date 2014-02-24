@@ -19,7 +19,7 @@ module ApplicationHelper
     end
   end
 
-  ::FACEBOOK_RELATED = 'pages/Weeds-Demo-Site/140060533020079'
+  ::FACEBOOK_RELATED = 'pages/Weeds-Demo-Site/1400605330200790'
   ::FACEBOOK_ID = "698196446898825"
   FACEBOOK_SECRET = "5ad4cc6e39ccd17b6a4314e71a1bd124"
   ::FACEBOOK_ADMINS = ['jessethebuilder']
