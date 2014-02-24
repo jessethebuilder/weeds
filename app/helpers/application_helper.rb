@@ -41,9 +41,9 @@ module ApplicationHelper
 
   def fan_page_og_tags
     html = standard_og_tags
-    tags = {:title => FACEBOOK_FAN_SITE_TITLE, :description => FACEBOOK_FAN_SITE_DESCRIPTION,
-            :type => 'website', :url => "http://www.facebook.com/#{FACEBOOK_RELATED}",
-            :image => 'images/anysoft_logo.png'}
+    tags = {'og:title' => FACEBOOK_FAN_SITE_TITLE, 'og:description' => FACEBOOK_FAN_SITE_DESCRIPTION,
+            'og:type' => 'website', 'og:url' => "http://www.facebook.com/#{FACEBOOK_RELATED}",
+            'og:image' => "#{Rails.root}/app/assets/images/anysoft_logo.png"}
     html += meta_tags(tags)
     html
   end
