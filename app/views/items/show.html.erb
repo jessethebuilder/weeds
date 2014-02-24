@@ -3,7 +3,7 @@
 <% end %>
 
 <%= content_for :head do %>
-  <%= og_tags(@item) %>
+  <%= item_og_tags(@item) %>
 <% end %>
 
 <div class="container">
@@ -32,3 +32,14 @@
 
   </div><!--row-->
 </div>
+
+<script>
+    var on_fan_page_like = function(url, selector){
+      alert(selector);
+    };
+
+    window.fbAsyncInit = function(){
+        FB.Event.subscribe('edge.create', on_fan_page_like);
+    }
+
+</script>

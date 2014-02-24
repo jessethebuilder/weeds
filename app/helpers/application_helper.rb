@@ -19,12 +19,12 @@ module ApplicationHelper
     end
   end
 
-  ::FACEBOOK_RELATED = 'anysoftdotnet'
+  ::FACEBOOK_RELATED = 'pages/Weeds-Demo-Site/140060533020079'
   ::FACEBOOK_ID = "698196446898825"
   FACEBOOK_SECRET = "5ad4cc6e39ccd17b6a4314e71a1bd124"
   ::FACEBOOK_ADMINS = ['jessethebuilder']
   #::FACEBOOK_FAN_SITE_URL = 'http://www.weedsherokuapp.com'
-  FACEBOOK_FAN_SITE_TITLE = 'Anysoft'
+  FACEBOOK_FAN_SITE_TITLE = 'Weeds Demo Site'
   FACEBOOK_FAN_SITE_DESCRIPTION = "If people don't LIKE your business on Facebook, how will their friends know they like your business?"
 
   ::TWITTER_RELATED = 'anysoftdotnet'

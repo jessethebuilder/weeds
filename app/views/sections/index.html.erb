@@ -31,3 +31,14 @@
 <script>
   activateFirstTab();
 </script>
+
+<script>
+    var on_fan_page_like = function(url, htmlElement){
+
+    };
+
+    window.fbAsyncInit = function(){
+        FB.Event.subscribe('edge.create', on_fan_page_like);
+    }
+
+</script>
