@@ -26,21 +26,16 @@ module ItemsHelper
     "#{STORE_NAME} | #{item.name}"
   end
 
-  def og_tags(item)
+  def item_og_tags(item)
     html = standard_og_tags
-    html += content_tag(:meta, '', property: 'og:title', content: facebook_title(item))
-    html += content_tag(:meta, '', property: 'og:description', content: item.description)
-    html += content_tag(:meta, '', property: 'og:type', content: 'product')
-    html += content_tag(:meta, '', property: 'og:url', content: request.url)
-    html += content_tag(:meta, '', property: 'og:image', content: item.images.sample.full_url(:facebook_meta))
+    tags = {
+             'og:title' => facebook_title(item),
+             'og:description' => item.description,
+             'og:type' => 'product',
+             'og:url' => request.url,
+             'og:image' => item.images.sample.full_url(:facebook_meta)
+           }
+    html += meta_tags(tags)
     html
-    #h.append('<meta property="og:title" content="' + title + '">');
-    #h.append('<meta property="og:type" content="' + type + '">');
-    #h.append('<meta property="og:image" content="' + image_url + '">');
-    #h.append('<meta property="og:url" content="' + url + '">');
-    #h.append('<meta property="og:description" content="' + description + '">');
-    #h.append('<meta property="og:site_name" content="' + site_name + '">');
   end
-
-
 end
