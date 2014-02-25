@@ -40,17 +40,17 @@
 </div>
 
 <script>
-    var fb_like_callback = function(url, selector){
-        $.ajax('<%= ajax_fb_like_path %>');
-    };
-
-
-
-    var facebook_fan_page_like_button = function(){
-        return $.ajax('<%= ajax_fb_like_path %>');
-    };
-
-    window.fbAsyncInit = function(){
-        FB.Event.subscribe('edge.create', fb_like_callback);
-    };
+//    var fb_like_callback = function(url, selector){
+//        $.ajax('<%#= ajax_fb_like_path %>');
+//    };
+//
+//
+//
+//    var facebook_fan_page_like_button = function(){
+//        return $.ajax('<%#= ajax_fb_like_path %>');
+//    };
+//
+//    window.fbAsyncInit = function(){
+//        FB.Event.subscribe('edge.create', fb_like_callback);
+//    };
 </script>
