@@ -1,0 +1,9 @@
+var like_btn = "<%= j like_on_facebook_button "http://www.facebook.com/#{FACEBOOK_RELATED}",
+                                                :include_script => false, :include_root => false,
+                                                :fb_id => FACEBOOK_ID, :share => false,
+                                                :layout => 'button' %> our  page for updates and deals.";
+//$('#top_nav').append(like_btn);
+
+$('<%= @invitation_selector %>').append(like_btn);
+FB.XFBML.parse();
+

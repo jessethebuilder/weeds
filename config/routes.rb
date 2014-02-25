@@ -22,5 +22,8 @@ Weeds::Application.routes.draw do
     end
   end
 
+  #NonResourceful Routes
+  get 'ajax/fb_like'
+
   root 'sections#index'
 end

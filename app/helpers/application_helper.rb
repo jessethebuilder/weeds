@@ -39,14 +39,14 @@ module ApplicationHelper
     Rails.env.development? ? 'http://weeds.herokuapps.com' : request.url
   end
 
-  def fan_page_og_tags
-    html = standard_og_tags
-    tags = {'og:title' => FACEBOOK_FAN_SITE_TITLE, 'og:description' => FACEBOOK_FAN_SITE_DESCRIPTION,
-            'og:type' => 'website', 'og:url' => "http://www.facebook.com/#{FACEBOOK_RELATED}",
-            'og:image' => "#{Rails.root}/app/assets/images/anysoft_logo.png"}
-    html += meta_tags(tags)
-    html
-  end
+  #def fan_page_og_tags
+  #  html = standard_og_tags
+  #  tags = {'og:title' => FACEBOOK_FAN_SITE_TITLE, 'og:description' => FACEBOOK_FAN_SITE_DESCRIPTION,
+  #          'og:type' => 'website', 'og:url' => "http://www.facebook.com/#{FACEBOOK_RELATED}",
+  #          'og:image' => "#{Rails.root}/app/assets/images/anysoft_logo.png"}
+  #  html += meta_tags(tags)
+  #  html
+  #end
 
   def standard_og_tags
     h = {'fb:app_id' => FACEBOOK_ID, 'fb:admins' => FACEBOOK_ADMINS.join(','), 'og:site_name' => STORE_NAME}
