@@ -38,6 +38,8 @@ gem 'farm_tools', :git => 'https://github.com/jessethebuilder/farm_tools'
 gem 'twitter_express', :git => 'https://github.com/jessethebuilder/TwitterExpress'
 gem 'bootstrap-sass', '~> 3.0.3.0'
 
+gem 'fb_graph'
+
 gem 'devise'
 #gem 'geocoder'
 

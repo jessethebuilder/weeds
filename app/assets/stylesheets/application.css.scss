@@ -36,6 +36,8 @@ $nav-pills-active-link-hover-bg: $leaf_color;
 }
 .navbar-nav li{
   background-color: rgba($nav_color, 1.0);
+//  border-top: 2px solid $dark_accent;
+//  border-bottom: 2px solid $dark_accent;
 }
 
 .nav a{
@@ -73,6 +75,9 @@ body{
 
 //forms
 $input-border-focus: $leaf_color;
+$btn-primary-bg: $leaf_color;
+$btn-primary-color: white;
+
 //$input-bg: $leaf_color;
 //$input-color: orange;
 
