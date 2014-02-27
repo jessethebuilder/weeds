@@ -92,7 +92,7 @@ $carousel-control-font-size: 40px;
 #footer_row{
   background-color: $medium_accent;
   border-top: 2px solid $dark_accent;
-  margin-top: 50px;
+//  margin-top: 50px;
   color: $dark_accent;
   padding-bottom: 50px;
 
@@ -147,5 +147,9 @@ $carousel-control-font-size: 40px;
     color: $dark_accent;
   }
 }
+.nav-pills .active{
+  border-bottom: 5px solid $dark_contrast;
+}
+
 
 @import "bootstrap";

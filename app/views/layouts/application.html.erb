@@ -11,16 +11,18 @@
   <%= content_for :head %>
 </head>
 <body>
-  <%= facebook_sdk FACEBOOK_ID %>
+<%= facebook_sdk FACEBOOK_ID %>
 
 <%= render :partial => 'parts/top_nav' %>
-<%= render :partial => 'parts/social_networking/follow_bar' %>
-<%= content_for :below_top_nav %>
-<%= render :partial => 'parts/flash' %>
-<%= render :partial => 'parts/banner' %>
-<%= content_for :below_banner %>
+<div id="main_content" class="container">
+  <%= render :partial => 'parts/social_networking/follow_bar' %>
+  <%= content_for :below_top_nav %>
+  <%= render :partial => 'parts/flash' %>
+  <%= render :partial => 'parts/banner' %>
+  <%= content_for :below_banner %>
 
-<%= yield %>
+  <%= yield %>
+</div>
 
 <%= render :partial => 'parts/footer' %>
 
