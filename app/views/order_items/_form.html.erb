@@ -15,9 +15,12 @@
           </label>
         <% end %>
       </div><!--btn-group-->
+      <br>
+      <%= button_tag :type => 'submit', :class => "form_submitter btn btn-primary btn-lg", :style => 'margin-left: 10px;' do %>
 
-      <%= button_tag :type => 'submit', :class => "form_submitter btn btn-primary btn-lg" do %>
-        <span class='glyphicon glyphicon-shopping-cart'></span> Add to cart
+        </span><span class="glyphicon glyphicon-plus"></span>
+        <span class='glyphicon glyphicon-shopping-cart'></span>
+
       <% end %>
     </div><!--form inline-->
   <% end #per_weight %>

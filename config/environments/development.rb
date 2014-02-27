@@ -29,4 +29,6 @@ Weeds::Application.configure do
 
   config.serve_static_assets = true
 
+  #config.assets.precompile += ['application.css']
+
 end

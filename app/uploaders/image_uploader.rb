@@ -35,11 +35,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fit => [150, 150]
   end
+
   version :carousel do
     process :resize_to_fit => [500, 375]
   end
   version :facebook_meta do
     process :resize_to_fit => [1200, 630]
+  end
+  version :menu_image do
+    process :resize_to_fit => [350, 250]
   end
 
  # Add a white list of extensions which are allowed to be uploaded.

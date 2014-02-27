@@ -1,14 +1,19 @@
-<% do_row = true %>
+<%# do_row = true %>
 
 <% section.items.each do |i| %>
-    <%= '<div class="row">'.html_safe if do_row %>
+    <%#= '<div class="row">'.html_safe if do_row %>
 
     <div class="col-md-6">
       <div class="menu_item" id="item_<%= i.id %>">
+        <%= image_tag i.images.sample.image_url(:menu_image), :class => 'menu_image' unless i.images.empty? %>
+
         <h3>
           <%= link_to i.name, item_path(i) %>
           <small>
-            <%= i.description %>
+            <strong>
+              <%= i.description %>
+
+            </strong>
           </small>
         </h3>
 
@@ -16,7 +21,8 @@
 
 
       </div>
+
     </div><!--col-->
-    <%= '</div><!--row-->'.html_safe if do_row == false || section.items.last == i %>
-    <% do_row = !do_row %>
+    <%#= '</div><!--row-->'.html_safe if do_row == false || section.items.last == i %>
+    <%# do_row = !do_row %>
 <% end %>

@@ -1,6 +1,17 @@
 <li id="current_order">
   <% unless current_order.new_record? %>
-      <%= link_to "<span class='glyphicon glyphicon-shopping-cart'></span> Shopping Cart".html_safe,
-                   edit_order_path(current_order), :class => 'btn btn-primary' %>
+      <%= link_to "<span class='glyphicon glyphicon-shopping-cart'></span> <span>Shopping Cart</span>".html_safe,
+                   edit_order_path(current_order), :class => 'btn btn-default' %>
+
+      <div id="shopping_cart_indicator">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <span class="glyphicon glyphicon-play"></span>
+      </div>
+
+      <script>
+        $('.navbar-header .navbar-toggle').append($('#shopping_cart_indicator'));
+      </script>
+
   <% end %>
 </li>
+

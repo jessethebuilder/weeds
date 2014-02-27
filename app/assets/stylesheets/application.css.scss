@@ -1,25 +1,37 @@
-/*
- *= require_self
- *= require_tree .
- */
-
-
 $leaf_color: #118200;
-
-
 $oregon_color: #000000;
 $dark_accent: #4a4a4a;
 $light_accent: #f0f0f0;
-
 $menu_font: Impact, Charcoal, sans-serif;
+$nav_color: rgba(255, 255, 255, 0.68);
+$dark_contrast: #76130e;
+$medium_accent: darken($nav_color, 20);
+
+//----------------BootStrap Overrides------------------------
+
+//Forms
+$input-border-focus: $leaf_color;
+//Buttons
+$btn-primary-bg: $dark_contrast;
+$btn-primary-color: white;
+.navbar-nav .btn-default{
+  background-color: $dark_contrast;
+  span{
+    color: white;
+  }
+}
 
 
-
-$nav_color: rgba(255, 255, 255, 0.67);
-
+.btn{
+  font-family: $menu_font;
+}
+.btn-group{
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+//Navs
 //top_nav
 $navbar-default-bg: $nav_color;
-//$navbar-default-color: black;
 $navbar-default-brand-color: $dark_accent;
 $navbar-default-link-color: $dark_accent;
 $navbar-default-brand-hover-color: $light_accent;
@@ -27,94 +39,56 @@ $navbar-default-link-hover-color: $light_accent;
 $navbar-default-toggle-border-color: black;
 $navbar-default-toggle-icon-bar-bg: black;
 $navbar-default-toggle-hover-bg: white;
-$medium_accent: darken($nav_color, 20);
 
-$nav-pills-active-link-hover-bg: $leaf_color;
+#shopping_cart_indicator{
+  position: absolute;
+  right: 100%;
+//  top: 25px;
+  top: 0;
+  margin-right: 10px;
+  display: inline-block;
+  white-space: nowrap;
 
+  span{
+    display: inline;
+    color: $dark_contrast;
+    font-size: 25px;
+//    margin-right: -20px;
+//    position: absolute;
+  }
+}
+//nav_pils
+$nav-pills-active-link-hover-bg: white;
+$nav-pills-active-link-hover-color: $dark_contrast;
+.nav-pills{
+  a:link{color: $dark_accent}
+  a:visited{color: $dark_accent}
+}
 .navbar-brand{
   font-family: $menu_font;
 }
-.navbar-nav li{
-  background-color: rgba($nav_color, 1.0);
-//  border-top: 2px solid $dark_accent;
-//  border-bottom: 2px solid $dark_accent;
-}
-
 .nav a{
   font-family: $menu_font;
 }
-
-
 a[data-toggle=tab]{
   font-family: $menu_font;
 }
-
-.menu_item{
-  border-top: 3px solid $dark_accent;
-//  border-bottom: 3px solid $oregon_color;
-
-//  border-radius: 20px;
-//  -moz-border-radius: 20px;
-//  margin: 10px;
-//  padding: 10px;
-//  margin-bottom: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
 .tab-content{
   margin-top: 15px;
 }
-
-body{
-}
-
-//carousel----------------------------------
-
-//end carousel-------------------------------
-
-//forms
-$input-border-focus: $leaf_color;
-$btn-primary-bg: $leaf_color;
-$btn-primary-color: white;
-
-//$input-bg: $leaf_color;
-//$input-color: orange;
-
-//buttons
-//$btn-primary-bg: $leaf_color;
-//$btn-primary-color: $dark_accent;
-
-.btn{
-  font-family: $menu_font;
-}
-
-.btn-group{
-  margin-bottom: 10px;
-  margin-right: 30px;
-}
-
-//---------------Carousel--------------------------
+//Carousel
 $carousel-control-font-size: 40px;
-
-//$carousel-
 .carousel{
-//  border: 5px solid $oregon_color;
-//  padding: 40px;
-//  background-color: rgba($leaf_color, .25);
   .item{
-
   }
   .inner_carousel_item{
     text-align: center;
-    //  vertical-align: middle;
   }
-
 }
 
-//footer
+//--------------------Features-----------------------------------
 
-
+//Footer
 #footer_row{
   background-color: $medium_accent;
   border-top: 2px solid $dark_accent;
@@ -126,9 +100,13 @@ $carousel-control-font-size: 40px;
     border-color: $dark_accent;
   }
 }
-
+//Social Networking
 .social_networking{
   margin-top: 5px;
+}
+#social_networking_row{
+  //  border-bottom: 1px solid $light_accent;
+
 }
 #fb-root{
   display: none;
@@ -137,11 +115,37 @@ $carousel-control-font-size: 40px;
   vertical-align: top !important;
 }
 
+//----------------------Items----------------------------------------
 
+.menu_image{
+  opacity:0.40;
+  filter:alpha(opacity=40);
+  position: absolute;
+  //  bottom: 50%;
+  right: 0px;
+  //  right: 100%;
+  //  right: 300px;
+  z-index: -1;
+  width: 350px;
+  height: 250px;
 
+}
+.menu_image:hover{
+  opacity: 1.0;
+  filter:alpha(opacity=100);
+}
+.menu_item{
+  position: relative;
+    border-top: 3px solid $dark_accent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 270px;
 
+  a:link{color: $leaf_color}
+  a:visited{color: $leaf_color}
+  h3 small{
+    color: $dark_accent;
+  }
+}
 
-
-//-------------------------------IMPORT BOOTSTRAP-----------------------------
 @import "bootstrap";
-

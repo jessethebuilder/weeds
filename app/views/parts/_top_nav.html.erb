@@ -17,12 +17,14 @@
         <span class="icon-bar"></span>
       </button>
 
+
       <%= link_to 'Rose City Medical', root_path, :class => 'navbar-brand' %>
     </div>
 
 
     <div id='top_nav_body' class='collapse navbar-collapse'>
       <ul class='nav navbar-nav navbar-right'>
+
         <%= render :partial => 'orders/current_order' %>
 
 
