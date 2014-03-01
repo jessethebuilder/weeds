@@ -1,5 +1,4 @@
 Weeds::Application.routes.draw do
-
   resources :orders do
     resources :order_items
   end
@@ -26,4 +25,8 @@ Weeds::Application.routes.draw do
   get 'ajax/fb_like'
 
   root 'sections#index'
+
+  #---------TEST---------------
+  get "test/facebook_plugin"
+
 end
