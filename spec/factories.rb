@@ -1,6 +1,6 @@
 FactoryGirl.define do
   sequence(:name){ |n| "A Name #{n}" }
-  sequence(:email){ |n| "test#{n}@test.com" }
+  sequence(:email){ |n| "tests#{n}@tests.com" }
 
 
   factory :section do

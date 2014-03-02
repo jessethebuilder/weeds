@@ -27,6 +27,7 @@ Weeds::Application.routes.draw do
   root 'sections#index'
 
   #---------TEST---------------
-  get "test/facebook_plugin"
+  get "facebook_plugin", :to => 'tests#facebook_plugin'
+  get "google_calendar", :to => 'tests#google_calendar'
 
 end

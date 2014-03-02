@@ -1,7 +1,7 @@
-u = User.new :email => 'test@test.com', :password => 'test8888'
+u = User.new :email => 'tests@tests.com', :password => 'test8888'
 u.save!
 
-a = User.new :email => 'admin@test.com', :password => 'test8888', :admin => true
+a = User.new :email => 'admin@tests.com', :password => 'test8888', :admin => true
 a.save!
 
 SectionsHelper::SECTIONS.each do |k, v|
@@ -29,7 +29,7 @@ ItemsHelper::ITEMS.each do |i|
 
   (0..3).each do |n|
     i = Image.create(:description => 'A description goes here.')
-    i.image.store!(File.open(File.join(Rails.root, 'app', 'assets', 'images', 'test', "pot#{n}.jpg")))
+    i.image.store!(File.open(File.join(Rails.root, 'app', 'assets', 'images', 'tests', "pot#{n}.jpg")))
     item.images << i
   end
 

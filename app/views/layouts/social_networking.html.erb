@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #debug{
+        background-color: #b0b09a;
+    }
+  </style>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+  <title>Facebook Plugin Test</title>
+
+  <style>
+    #social_networking_specific{
+        /*margin-top: 20px;*/
+    }
+    #social_networking_specific div{
+        display :inline;
+    }
+
+    .fb-like{
+        vertical-align: top !important;
+    }
+
+  </style>
+
+  <script>
+    //Facebook scripts
+    var fb_id = '593946380691883';
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: fb_id,
+            status: false,
+            xfbml: true
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+//        js.src = "//connect.facebook.net/en_US/all.js";
+        js.src = "//connect.facebook.net/en_US/all/debug.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function likeButtonSpecific(parent_selector){
+//      todo  var url = document.URL;
+        var url = 'http://www.realtherapyjobs.com';
+        var html = '<fb:like id="facebook_like_specific" href="' + url +
+                '" layout="button_count" show_faces="false" width="65" action="like" colorscheme="light" ' +
+                'share="true" />';
+        $(parent_selector).append(html);
+        parse_facebook('facebook_like_specific');
+    }
+    function likeButtonGeneral(parent_selector){
+        var html = '<div id="fb_like_general"><fb:like href="https://www.facebook.com/NorthwestMassageandHealingCenter"' +
+                    'data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>';
+        $(parent_selector).append(html);
+        parse_facebook('facebook_like_general');
+    }
+    function parse_facebook(element_id){
+        if(typeof FB !== 'undefined'){
+            FB.XFBML.parse(document.getElementById(element_id))
+        }
+    }
+
+    //Twitter functions
+      //from twitter
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+       function tweetButton(parent_selector){
+           var html = '<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>'
+           $(parent_selector).append(html);
+       }
+    //button placement
+      $(document).ready(function(){
+          $('<div id="social_networking_general"></div>').insertAfter('#debug');
+          $('<div id="social_networking_specific"></div>').insertAfter('#social_networking_general');
+
+          likeButtonGeneral('#social_networking_general');
+          likeButtonSpecific('#social_networking_specific');
+          tweetButton('#social_networking_specific');
+      });
+  </script>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <div id="debug">
+    test thingy
+
+  </div>
+
+</body>
+</html>
+
